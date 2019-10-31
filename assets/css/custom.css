@@ -1,0 +1,16 @@
+.presentation-page .header-filter:after,
+.index-page .header-filter:after {
+    background: rgba(132, 13, 17, 0.88);
+    background: linear-gradient(45deg, rgba(132, 13, 17, 0.88) 0%, rgba(208, 24, 20, 0.31) 100%);
+    background: -moz-linear-gradient(135deg, rgba(132, 13, 17, 0.88) 0%, rgba(208, 24, 20, 0.31) 100%);
+    background: -webkit-linear-gradient(135deg, rgba(132, 13, 17, 0.88) 0%, rgba(208, 24, 20, 0.31) 100%);
+}
+
+.navbar .dropdown-menu li > a:hover,
+.navbar .dropdown-menu li > a:focus,
+.navbar.navbar-default .dropdown-menu li > a:hover,
+.navbar.navbar-default .dropdown-menu li > a:focus {
+    color: #FFFFFF;
+    background-color: #840d11;
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(208, 24, 20, 0.4);
+}
