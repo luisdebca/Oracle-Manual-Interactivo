@@ -111,7 +111,8 @@
 
 <div class="main main-raised">
     <div class="container">
-        <div class="title">
+
+        <div class="panel-title">
             <h1>Proceso de instalación</h1>
         </div>
         <h2>Índice</h2>
@@ -130,13 +131,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#notifications" data-number="3">
+                    <a href="#title-3" data-number="3">
                         <span class="cd-dot"></span>
                         <span class="cd-label">Características y componentes del Gestor de Base de datos</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#footers" data-number="4">
+                    <a href="#title-4" data-number="4">
                         <span class="cd-dot"></span>
                         <span class="cd-label">Creación de la ruta de almacenamiento de la BD</span>
                     </a>
@@ -313,13 +314,173 @@
         <div class="title">
             <h3>Características y componentes del Gestor de Base de datos</h3>
         </div>
-        <div class="row">
+        <div class="row" id="title-3">
             <div class="col-md-8 col-md-offset-2">
-                <h4 class="text-danger">Gestor de base de datos Oracle</h4>
-                <img src="../assets/img/oracle.png" alt="Rounded Image" class="img-rounded img-responsive" width="150" height="150">
-                <p>Oracle Database es un sistema de gestión de bases de datos relacionales de objetos desarrollado y comercializado por Oracle Corporation. Oracle Database se conoce comúnmente como Oracle RDBMS o simplemente Oracle.</p>
+                <h4 class="text-capitalize">Gestor de base de datos Oracle</h4>
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="../assets/img/oracle.png" alt="Rounded Image" class="img-rounded img-responsive" width="150" height="150">
+                    </div>
+                    <div class="col-md-8">
+                        <p>Oracle Database es un sistema de gestión de bases de datos relacionales de objetos desarrollado y comercializado por Oracle Corporation. Oracle Database se conoce comúnmente como Oracle RDBMS o simplemente Oracle.</p>
+                    </div>
+                </div>
+                <h4>Instancia de la base de datos</h4>
+                <p>Una base de datos Oracle consta de una base de datos y al menos una instancia.</p>
+                <p>Una instancia, o instancia de base de datos, es la combinación de memoria y procesos que forman parte de una instalación en ejecución y una base de datos es un conjunto de archivos que almacenan datos.</p>
+
+                <div class="col-md-12">
+                    <div class="rotating-card-container manual-flip">
+                        <div class="card card-rotate">
+                            <div class="front">
+                                <div class="card-content">
+                                    <img src="../assets/img/Oracle-Database-Architecture.png" alt="Arquitectura">
+                                    <div class="footer text-center">
+                                        <button type="button" name="button" class="btn btn-success btn-fill btn-round btn-rotate">
+                                            <i class="material-icons">refresh</i> Más información
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="back">
+                                <div class="card-content">
+                                    <p>A veces, una instancia de base de datos se conoce como una base de datos en ejecución completa. Sin embargo, es importante entender las distinciones entre los dos.</p>
+                                    <p>Primero, puede iniciar una instancia de base de datos sin tener que acceder a ningún archivo de base de datos. Así es como se crea una base de datos, comenzando primero una instancia y creando la base de datos desde dentro de la instancia.</p>
+                                    <p>En segundo lugar, una instancia solo puede acceder a una base de datos a la vez. Cuando inicia una instancia, el siguiente paso es montar esa instancia en una base de datos. Y una instancia puede montar solo una base de datos en un solo punto en el tiempo.</p>
+                                    <p>Tercero, varias instancias de bases de datos pueden acceder a la misma base de datos. En un entorno de clústeres, muchas instancias en varios servidores acceden a una base de datos central para permitir una alta disponibilidad y escalabilidad.</p>
+                                    <p>Finalmente, una base de datos puede existir sin una instancia. Sin embargo, sería inutilizable porque es solo un conjunto de archivos.</p>
+                                    <button type="button" name="button" class="btn btn-simple btn-round btn-rotate">
+                                        <i class="material-icons">refresh</i> Regresar...
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <h4>Estructuras de almacenamiento físico</h4>
+                <p>Las estructuras de almacenamiento físico son simplemente archivos que almacenan datos. Cuando ejecuta una instrucción <strong>CREATE DATABASE</strong> para crear una nueva base de datos, Oracle crea los siguientes archivos:</p>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingOne">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <h4 class="panel-title">
+                                            Archivos de datos
+                                            <i class="material-icons">keyboard_arrow_down</i>
+                                        </h4>
+                                    </a>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                    <div class="panel-body">
+                                        Los archivos de datos contienen datos reales, por ejemplo, pedidos de ventas y datos de clientes. Los datos de las estructuras de bases de datos lógicas, como tablas e índices, se almacenan físicamente en los archivos de datos.
+                                        <br><a href="https://docs.oracle.com/cd/B19306_01/server.102/b14220/physical.htm">Más información...</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingTwo">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <h4 class="panel-title">
+                                            Archivos de control
+                                            <i class="material-icons">keyboard_arrow_down</i>
+                                        </h4>
+                                    </a>
+                                </div>
+                                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                    <div class="panel-body">
+                                        Cada base de datos tiene un archivo de control que contiene metadatos. Los metadatos describen la estructura física de la base de datos, incluido el nombre de la base de datos y las ubicaciones de los archivos de datos.
+                                        <br><a href="https://docs.oracle.com/cd/B19306_01/server.102/b14220/physical.htm">Más información...</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingThree">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        <h4 class="panel-title">
+                                            Archivos de Log
+                                            <i class="material-icons">keyboard_arrow_down</i>
+                                        </h4>
+                                    </a>
+                                </div>
+                                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                    <div class="panel-body">
+                                        Cada base de datos tiene un registro de Log que consta de dos o más archivos de registro de Log. Un registro de Log se compone de entradas de rehacer que registran todos los cambios realizados en los datos.
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="rotating-card-container manual-flip">
+                        <div class="card card-rotate">
+                            <div class="front">
+                                <div class="card-content">
+                                    <img src="../assets/img/Oracle-Database-Architecture-database-system-files.png" alt="Arquitectura">
+                                    <div class="footer text-center">
+                                        <button type="button" name="button" class="btn btn-success btn-fill btn-round btn-rotate">
+                                            <i class="material-icons">refresh</i> Más información
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="back">
+                                <div class="card-content">
+                                    <p><strong>El repositorio de diagnóstico automático (ADR)</strong> es un repositorio jerárquico basado en archivos para manejar información de diagnóstico.</p>
+                                    <p>Los administradores de seguridad usan <strong>Oracle Wallet Manager</strong> para administrar credenciales de seguridad de clave pública en clientes y servidores Oracle.</p>
+                                    <p><strong>Block changing tracking</strong> mejora el rendimiento de las copias de seguridad incrementales al registrar bloques modificados en el archivo de seguimiento de cambio de bloque. Durante una copia de seguridad incremental, en lugar de escanear todos los bloques de datos para identificar qué bloques han cambiado, RMAN usa este archivo para identificar los bloques modificados que necesitan copia de seguridad.</p>
+                                    <button type="button" name="button" class="btn btn-simple btn-round btn-rotate">
+                                        <i class="material-icons">refresh</i> Regresar...
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <h4>Estructuras lógicas de almacenamiento</h4>
+                <p>Oracle Database utiliza una estructura de almacenamiento lógica para un control detallado del uso del espacio en disco. Las siguientes son estructuras de almacenamiento lógico en una base de datos Oracle:</p>
+                <div class="col-md-12">
+                    <div class="rotating-card-container manual-flip">
+                        <div class="card card-rotate">
+                            <div class="front">
+                                <div class="card-content">
+                                    <img src="../assets/img/Segments-Extents-and-Data-Blocks-Within-a-Tablespace.gif" alt="Arquitectura">
+                                    <div class="footer text-center">
+                                        <button type="button" name="button" class="btn btn-success btn-fill btn-round btn-rotate">
+                                            <i class="material-icons">refresh</i> Más información
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="back">
+                                <div class="card-content">
+                                    <ul>
+                                        <li><strong>Bloques de datos:</strong> un bloque de datos corresponde a una cantidad de bytes en el disco. Oracle almacena datos en bloques de datos. Los bloques de datos también se conocen como bloques lógicos, bloques de Oracle o páginas.</li>
+                                        <li><strong>Extensiones:</strong> Una extensión es un número específico de bloques de datos lógicamente contiguos utilizados para almacenar el tipo particular de información.</li>
+                                        <li><strong>Segmentos:</strong> un segmento es un conjunto de extensiones asignadas para almacenar objetos de base de datos, por ejemplo, una tabla o un índice.</li>
+                                        <li><strong>Tablespaces:</strong> una base de datos se divide en unidades de almacenamiento lógicas llamadas tablespaces. Un tablespace es un contenedor lógico para un segmento. Cada espacio de tabla consta de al menos un archivo de datos.</li>
+                                    </ul>
+                                    <button type="button" name="button" class="btn btn-simple btn-round btn-rotate">
+                                        <i class="material-icons">refresh</i> Regresar...
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="title">
+            <h3>Creación de la ruta de almacenamiento de la BD</h3>
+        </div>
+        <div class="row" id="title-4"></div>
     </div>
 </div>
 
